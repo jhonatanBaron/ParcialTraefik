@@ -32,5 +32,5 @@ docker-compose up -d --build
 
 
 #####Detener y limpiar los contendores
-docker-compose down
-docker system prune -a
+-docker-compose down;
+-docker system prune -a
