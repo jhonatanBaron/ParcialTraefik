@@ -46,7 +46,7 @@ services:
       - "traefik.http.services.postgresql.loadbalancer.server.port=5432"
 
   etl_api:
-    build: ./Backend
+    build: ./backend
     container_name: etl_api
     restart: unless-stopped
     environment:

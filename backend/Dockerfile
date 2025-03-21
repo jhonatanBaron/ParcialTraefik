@@ -11,6 +11,9 @@ COPY app app
 # Instalar dependencias
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Crear directorio para CSV
+RUN mkdir -p /app/data
+
 # Exponer el puerto de la API
 EXPOSE 5000
 

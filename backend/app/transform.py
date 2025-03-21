@@ -8,9 +8,9 @@ def transform_data(data):
             return "Mala"
 
     for movie in data:
-        movie["nombre_formateado"] = movie["p.nombre"].lower().replace(" ", "-")
-        movie["categoria_calificacion"] = categorize_rating(movie["p.calificacion"])
-        movie["decada"] = f"{(movie['p.año_lanzamiento'] // 10) * 10}s"
-        movie["puntuacion_ajustada"] = (movie["p.calificacion"] * 2) - (2025 - movie["p.año_lanzamiento"]) / 10
+        movie["nombre_formateado"] = movie["nombre"].lower().replace(" ", "-")
+        movie["categoria_calificacion"] = categorize_rating(movie["calificacion"])
+        movie["decada"] = f"{(movie['año_lanzamiento'] // 10) * 10}s"
+        movie["puntuacion_ajustada"] = (movie["calificacion"] * 2) - (2025 - movie["año_lanzamiento"]) / 10
 
     return data
