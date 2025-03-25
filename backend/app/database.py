@@ -1,5 +1,5 @@
 from neo4j import GraphDatabase
-import psycopg2
+import psycopg2 # type: ignore
 import os
 
 def get_neo4j_connection():

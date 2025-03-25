@@ -1,4 +1,5 @@
 import psycopg2
+import json
 
 def load_data(data):
     conn = psycopg2.connect("dbname=etl_db user=admin password=admin host=postgres")
@@ -13,3 +14,11 @@ def load_data(data):
     conn.commit()
     cur.close()
     conn.close()
+    
+def load_data_from_file(filepath):
+    with open(filepath, 'r') as file:
+        data = json.load(file)
+    load_data(data)
+
+# Llamada a la función con la ruta del archivo
+load_data_from_file('/home/jhona/Documentos/ParcialTraefik/Data/dataset_a_peliculas')
